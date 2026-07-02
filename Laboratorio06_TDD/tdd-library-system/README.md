@@ -5,21 +5,27 @@ Este proyecto consiste en la implementación de un sistema básico automatizado 
 ## 🚀 Metodología TDD Aplicada
 
 El desarrollo se realizó siguiendo el ciclo estricto de TDD:
-1. **Fase Roja (Red):** Se escribieron primero las pruebas unitarias en `test_payment_service.py` definiendo el comportamiento esperado y las reglas de negocio, las cuales fallaron inicialmente.
-2. **Fase Verde (Green):** Se implementó el código mínimo necesario en `library_service.py` para lograr que todas las pruebas pasen de forma satisfactoria.
-3. **Refactorización (Refactor):** Se limpió y ordenó el código para asegurar buenas prácticas de programación sin alterar su comportamiento.
+1. **Fase Roja (Red):** Diseño previo de pruebas unitarias (fallo controlado).
+2. **Fase Verde (Green):** Implementación de la lógica justa para la aprobación de los test.
+3. **Refactorización (Refactor):** Estructuración del código bajo buenas prácticas.
 
 ## 📋 Reglas de Negocio Validadas
 
-El sistema controla tres escenarios principales:
-* **Cálculo de Totales con Impuestos:** Se aplica un impuesto del 18% (`TAX = 0.18`) a los montos procesados de forma correcta.
-* **Validación de Montos Negativos:** El sistema arroja un error de tipo `ValueError` si se intenta ingresar un valor menor a cero.
-* **Límite Diario de Operaciones:** Se bloquea cualquier proceso que supere el límite máximo establecido (`DAILY_LIMIT = 10000`).
+* **Cálculo de Totales con Impuestos (18%):** Se aplica la tasa correspondiente de forma automatizada.
+* **Validación de Parámetros Inválidos:** Control de excepciones ante montos menores a cero.
+* **Límite Operativo Diario:** Restricción de transacciones que excedan el límite de 10,000.
+
+## 📊 Resultados de las Pruebas
+
+Aquí se muestra la ejecución exitosa de los test unitarios en el entorno local:
+
+![Resultados de Pytest](Captura de pantalla 2026-07-02 142102.png)
 
 ## 🛠️ Instalación y Ejecución
 
-Sigue estos pasos para clonar el proyecto y ejecutar las pruebas en tu entorno local:
+```bash
+# 1. Instalar pytest
+pip install pytest
 
-1. **Instalar las dependencias requeridas (pytest):**
-   ```bash
-   pip install pytest
+# 2. Ejecutar las pruebas
+python -m pytest test_payment_service.py -v
