@@ -19,7 +19,7 @@ El desarrollo se realizó siguiendo el ciclo estricto de TDD:
 
 Aquí se muestra la ejecución exitosa de los test unitarios en el entorno local:
 
-![Resultados de Pytest](Captura de pantalla 2026-07-02 142102.png)
+![Resultados de Pytest](resultado.png)
 
 ## 🛠️ Instalación y Ejecución
 
